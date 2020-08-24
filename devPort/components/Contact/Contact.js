@@ -5,7 +5,7 @@ import initialState from "./InitialState";
 import { limits, reducer } from "./Reducer";
 import axios from "axios";
 import loadable from "@loadable/component";
-import "./Form.css";
+
 const shitModule = () => {
   import(/* webpackPrefetch: true */"../getShit");
 };

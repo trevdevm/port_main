@@ -11,4 +11,4 @@ loadableReady(() => {
             <App />
         </Router>,
         root);
-})
+});

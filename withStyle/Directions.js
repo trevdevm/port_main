@@ -1,4 +1,5 @@
 import React from "react";
+import { createRoutesFromArray } from "react-router-dom";
 import loadable from "@loadable/component";
 import Body from "./components/Body/Body";
 import Load from "./components/Load";
@@ -12,11 +13,15 @@ const About = loadable(() => import(/* webpackPrefetch: true */"./components/Abo
 });
 
 
-const Directions = [
-  { path: "/", element: <Body /> },
-  { path: "/about", element: < About /> },
-  { path: "/contact", element: <Contact /> }
-];
+const Directions = () => {
+  const direction = createRoutesFromArray([
+    { path: "/", element: <Body /> },
+    { path: "/about", element: < About /> },
+    { path: "/contact", element: <Contact /> }
+  ]);
+
+  return direction;
+}
 
 
 export default Directions;

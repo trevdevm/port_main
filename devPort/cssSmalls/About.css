@@ -1,0 +1,7 @@
+.about {
+    display: grid;
+    grid-template: 10% 80% 10% / 20% 60% 20%;
+    height: 100%;
+    width: 100%;
+    margin-top: 1%;
+}

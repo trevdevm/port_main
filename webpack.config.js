@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
 const { merge } = require("webpack-merge");
 const presetConfig = require("./build-utils/loadPresets");
-const LoadablePlugin = require('@loadable/webpack-plugin');
+
 
 module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
     return merge({
@@ -24,13 +24,8 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
                 }
             ]
         },
-        output: {
-            filename: "[id].bundle.js",
-            publicPath: "/dist/"
-        },
         plugins: [
-            new webpack.ProgressPlugin(),
-            new LoadablePlugin()
+            new webpack.ProgressPlugin()
         ]
     },
         modeConfig(mode),

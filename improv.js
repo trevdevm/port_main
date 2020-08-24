@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT;
 
-app.use("/public/css", express.static("public"));
+app.use("/public", express.static("public"));
 app.use("/dist", express.static("dist"));
 
 app.use('/*', middleware);

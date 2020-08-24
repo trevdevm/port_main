@@ -4,22 +4,30 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const compressWebpack = require("compression-webpack-plugin");
 const LoadablePlugin = require('@loadable/webpack-plugin');
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = () => ({
-    name: "portFront",
-    entry: "./devPort/main.js",
-    target: "web",
-
+    mode: "production",
+    name: "portBack",
+    target: "node",
+    externals: [nodeExternals()],
+    entry: {
+        "App": "./devPort/components/App/App.js"
+    },
     module: {
         rules: [
             {
-                test: /\.html$/i,
-                use: [{
-                    loader: "html-loader",
+                test: /\.js$/,
+                exclude: [/(node_modules|bower_components)/, /public/],
+                use: {
+                    loader: "babel-loader",
                     options: {
-                        attributes: false
+                        presets: [
+                            "@babel/preset-react",
+                            "@babel/preset-env"
+                        ]
                     }
-                }]
+                }
             },
             {
                 test: /\.css$/,
@@ -27,8 +35,7 @@ module.exports = () => ({
                     {
                         loader: "css-loader",
                         options: {
-                            modules: true,
-                            importLoaders: 1
+                            importLoaders: 1,
                         }
                     }]
             },
@@ -46,13 +53,7 @@ module.exports = () => ({
         ]
     },
     output: {
-        filename: "[id].bundle.js",
-        publicPath: "/dist/"
-    },
-    plugins: [
-        new LoadablePlugin(),
-        new HtmlWebpackPlugin({
-            template: "./devPort/index.html",
-        })
-    ]
+        path: "/home/trevdevm/code/webpack/port_main/server/",
+        filename: "[name].js"
+    }
 })

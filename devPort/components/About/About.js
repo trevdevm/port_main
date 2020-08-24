@@ -1,10 +1,10 @@
 import React from 'react';
 import AboutDisplay from "./AboutDisplay";
-import "./About.css";
+import aboutS from "./About.css";
 
 const About = () => {
   return (
-    <div className="about">
+    <div className={aboutS.about}>
       <AboutDisplay />
     </div>
   );

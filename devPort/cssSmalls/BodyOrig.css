@@ -1,0 +1,29 @@
+.hGrid {
+    display: grid;
+    grid-template: 45vh 60% / 100%;
+    margin-top: 2%;
+}
+
+.home {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.calThumb {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+@media only screen and (min-device-width : 768px) {
+    .hGrid {
+        grid-template: 100% / 2fr 1.3fr;
+        margin-top: 0;
+    }
+    
+    
+    .home {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    
+    .calThumb {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+}

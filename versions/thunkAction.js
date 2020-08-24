@@ -1,8 +1,8 @@
-const Directions = require('./withStyle/Directions');
+const Directions = require('../withStyle/Directions');
 const { Readable } = require('readable-stream');
 import eos from 'end-of-stream';
 import { matchRoutes } from "react-router-dom";
-const winston = require("./config/winston");
+const winston = require("../config/winston");
 
 
 const readableString = string => {
@@ -50,7 +50,7 @@ const thunkAction = location => {
         return headInsert;
 
     } else {
-        winston.info(`Unknown requested route ${location.pathname}.`)
+        winston.info(`Unknown requested route ${location}.`)
         return null;
     }
 }

@@ -1,15 +1,21 @@
-import React from "react";
-import { useRoutes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { matchRoutes, useLocation } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Directions from "../../Directions";
 
 const App = () => {
 
-  const pathRendered = () => {
-    let thePath = useRoutes(Directions);
+  let location = useLocation();
+  const [view, setView] = useState(location);
 
-    return thePath;
+  const direction = () => {
+    let matched = matchRoutes(Directions, location);
+    setView(matched);
   }
+
+  useEffect(() => {
+    direction();
+  }, [location])
 
   return (
     <div className="app">
@@ -17,7 +23,7 @@ const App = () => {
         <NavBar />
       </div>
       <div className="body">
-        {pathRendered()}
+        {view}
       </div>
     </div>
   );

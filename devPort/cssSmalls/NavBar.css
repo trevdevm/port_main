@@ -1,0 +1,34 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+  
+  .navItems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+#home, #about, #contact {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+  
+@media only screen and (min-device-width : 768px) {
+  .navItems {
+    width: 60%;
+  }
+
+  #home, #about, #contact {
+      font-size: 1.7rem;
+  }
+}
