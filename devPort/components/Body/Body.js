@@ -3,9 +3,11 @@ import Home from "./Home";
 import Heading from "./Heading";
 import CalThumb from "./CalThumb";
 import bodyS from "./Body.css";
-import withStyles from "isomorphic-style-loader/withStyles";
+import useStyles from "isomorphic-style-loader/useStyles";
 
 const Body = () => {
+  useStyles(bodyS);
+
   return (
     <div>
       <div className={bodyS.head}>
@@ -24,4 +26,3 @@ const Body = () => {
 };
 
 export default Body;
-//export default withStyles(bodyS)(Body);

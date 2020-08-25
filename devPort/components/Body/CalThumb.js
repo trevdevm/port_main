@@ -28,5 +28,4 @@ class CalThumb extends React.Component {
     }
 }
 
-export default CalThumb;
-//export default withStyles(bodyS)(CalThumb);
+export default withStyles(bodyS)(CalThumb);

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useStyles from "isomorphic-style-loader/useStyles";
 import aboutS from "./About.css";
 
 const AboutDisplay = () => {
+  useStyles(aboutS);
+
   const [ready, setReady] = useState(false);
 
   useEffect(() => {

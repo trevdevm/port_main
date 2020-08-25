@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import useStyles from "isomorphic-style-loader/useStyles";
 import formS from "./Form.css";
 
 const Thanks = (props) => {
+    useStyles(formS);
+
     return (
         <div className={formS.thanks}>
             <h1>Thank you, {props.legit}!</h1>

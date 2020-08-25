@@ -22,14 +22,14 @@ module.exports = () => ({
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader,
-                {
-                    loader: "css-loader",
-                    options: {
-                        modules: true,
-                        importLoaders: 1
-                    }
-                }]
+                use: ["isomorphic-style-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            importLoaders: 1
+                        }
+                    }]
             },
             {
                 test: [/\.jp?g$/, /\.png$/],

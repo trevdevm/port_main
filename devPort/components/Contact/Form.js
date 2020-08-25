@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import formS from "./Form.css";
-import withStyles from "isomorphic-style-loader/withStyles";
+import useStyles from "isomorphic-style-loader/useStyles";
 
 const Form = (props) => {
+  useStyles(formS);
+
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -102,4 +104,3 @@ const Form = (props) => {
 
 
 export default Form;
-//export default withStyles(formS)(Form);

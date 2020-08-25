@@ -14,6 +14,8 @@ const insertCss = (...styles) => {
 const root = document.getElementById("main");
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <StyleContext.Provider value={{ insertCss }}>
+            <App />
+        </StyleContext.Provider>
     </BrowserRouter>,
     root);

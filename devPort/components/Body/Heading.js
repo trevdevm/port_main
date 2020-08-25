@@ -1,8 +1,10 @@
 import React from "react";
 import bodyS from "./Body.css";
-import withStyles from "isomorphic-style-loader/withStyles";
+import useStyles from "isomorphic-style-loader/useStyles";
 
 const Heading = () => {
+  useStyles(bodyS);
+
   return (
     <div className={bodyS.chosen}>
       <div className={bodyS.left}>
@@ -17,4 +19,3 @@ const Heading = () => {
 }
 
 export default Heading;
-//export default withStyles(bodyS)(Heading);
