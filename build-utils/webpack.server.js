@@ -12,7 +12,7 @@ module.exports = () => ({
     target: "node",
     externals: [nodeExternals()],
     entry: {
-        "App": "./devPort/components/App/App.js"
+        "improv": "./improv.js"
     },
     module: {
         rules: [
@@ -35,7 +35,8 @@ module.exports = () => ({
                     {
                         loader: "css-loader",
                         options: {
-                            importLoaders: 1,
+                            modules: true,
+                            importLoaders: 1
                         }
                     }]
             },

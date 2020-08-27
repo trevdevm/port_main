@@ -24,7 +24,14 @@ const App = () => {
     setCurrentLocation(location);
   }, [location])
 
+  const rouRen = () => {
+    const myRoutes = routes;
+    return renderRoutes(myRoutes);
+  }
+
   const rendering = () => {
+    const myRen = rouRen();
+
     if (!isServer) {
       function getRenderData() {
         const headArr = Resource(location.pathname);
@@ -43,10 +50,14 @@ const App = () => {
       }
 
       setData();
+      if (!head) {
+        setHead(true);
+      }
+
+      return (head ? myRen : <Load />);
     }
 
-    setHead(true);
-    return;
+    return myRen;
   }
 
   return (
@@ -55,7 +66,7 @@ const App = () => {
         <NavBar />
       </div>
       <div className="body">
-        {head ? renderRoutes(routes) : <Load />}
+        {rendering()}
       </div>
     </div>
   );
