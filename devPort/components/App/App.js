@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Switch } from "react-router-dom";
 
 import NavBar from "../NavBar/NavBar";
 import Load from "../Load";
@@ -26,7 +26,11 @@ const App = () => {
 
   const rouRen = () => {
     const myRoutes = routes;
-    return renderRoutes(myRoutes);
+    return (
+      <Switch>
+        {renderRoutes(myRoutes)}
+      </Switch>
+    )
   }
 
   const rendering = () => {

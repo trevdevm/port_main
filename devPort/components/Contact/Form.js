@@ -5,14 +5,8 @@ import useStyles from "isomorphic-style-loader/useStyles";
 const Form = (props) => {
   useStyles(formS);
 
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
   return (
-    <div className={formS.contact} style={{ visibility: ready ? 'visible' : 'hidden' }}>
+    <div className={formS.contact}>
       <div className={formS.fHead}>
         {props.serveErr ? (
           <p id="resp">{props.temp}</p>

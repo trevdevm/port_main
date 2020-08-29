@@ -1,15 +1,14 @@
 import React from "react";
 import bodyS from "./Body.css";
 import useStyles from "isomorphic-style-loader/useStyles";
-const homeImg = require("../../../public/the-developer.jpg");
 
-const Home = () => {
+const Home = (props) => {
   useStyles(bodyS);
 
 
   return (
     <div className={bodyS.media}>
-      <img src={homeImg} alt="The Web Developer" />
+      <img src={props.pic} alt="The Web Developer" />
       <h2>Skills:</h2>
       <ul className={bodyS.skills}>
         <li id="react">React</li>

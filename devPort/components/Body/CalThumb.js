@@ -1,31 +1,17 @@
 import React from "react";
 import bodyS from "./Body.css";
-import withStyles from "isomorphic-style-loader/withStyles";
+import useStyles from "isomorphic-style-loader/useStyles";
 
-class CalThumb extends React.Component {
-    constructor(props) {
-        super(props);
+const CalThumb = (props) => {
+    useStyles(bodyS);
 
-        this.state = {
-            calLoaded: [],
-        };
-    }
-
-    componentDidMount() {
-        this.setState({
-            calLoaded: require("../../../public/cal1500C.png"),
-        });
-    }
-
-    render() {
-        return (
-            <div className={bodyS.theCal}>
-                <h2>Calendar/Scheduling App</h2>
-                <a href="https://www.devmunns.site/cal/" id="blahC"><h3>Click here to check it out!</h3></a>
-                <img src={this.state.calLoaded} alt="Calendar and Scheduling Application" />
-            </div>
-        )
-    }
+    return (
+        <div className={bodyS.theCal}>
+            <h2>Calendar/Scheduling App</h2>
+            <a id="blahC" href="https://www.devmunns.site/cal/">Click here to check it out!</a>
+            <img src={props.pic} alt="Calendar and Scheduling Application" />
+        </div>
+    )
 }
 
-export default withStyles(bodyS)(CalThumb);
+export default CalThumb;

@@ -34,3 +34,16 @@ eos(reactMarkup, (err) => {
     res.end(`</div>${chunkExtractor.getScriptTags()}</body></html>`)
 })
 } */
+
+
+const readableString = string => {
+    const s = new Readable();
+    s.push(string);
+    s.push(null);
+    s._read = () => true;
+    return s;
+};
+
+
+//lazy trick to load styles before render but dont get html string for poor people on 3G so fuck that shit
+<div className={formS.contact} style={{ visibility: ready ? 'visible' : 'hidden' }}></div>

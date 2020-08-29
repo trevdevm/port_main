@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cleanDist": "rm -rf dist/",
+    "dist": "npm run cleanDist && npm run prod",
     "cleanS": "rm -rf server/",
     "clean": "npm run cleanDist && npm run cleanServer",
     "cleanssr": "rm -r ssr/",
@@ -18,7 +19,7 @@
     "prod:analyze": "npm run prod -- --env.presets analyze",
     "prod:compress": "npm run prod -- --env.presets compress",
     "improv": "nodemon improv.js --exec babel-node",
-    "serveBuild": "nodemon server/improv.js",
+    "serve": "nodemon server/improv.js",
     "serveEsFive": "nodemon es5.js",
     "tPile": "babel devPort --out-dir ssr",
     "ssr": "npm run cleanssr && npm run tPile"

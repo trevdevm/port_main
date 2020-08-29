@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 app.use("/public", express.static("public"));
 app.use("/dist", express.static("dist"));
 
-app.use('/*', middleware);
+app.use(middleware);
 
 winston.info(`listening on ${PORT}`);
 const server = app.listen(PORT);

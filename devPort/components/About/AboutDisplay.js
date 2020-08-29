@@ -5,15 +5,8 @@ import aboutS from "./About.css";
 
 const AboutDisplay = () => {
   useStyles(aboutS);
-
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
   return (
-    <div className={aboutS.aboutDisplay} style={{ visibility: ready ? 'visible' : 'hidden' }}>
+    <div className={aboutS.aboutDisplay}>
       <h1>About Me</h1>
       <div className={aboutS.abPar}>
         <p>
