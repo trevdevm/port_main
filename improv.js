@@ -1,13 +1,14 @@
 import express from "express";
 import middleware from "./middleware";
 const winston = require("./config/winston");
+var expressStaticGzip = require("express-static-gzip");
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT;
 
 app.use("/public", express.static("public"));
-app.use("/dist", express.static("dist"));
+app.use("/dist", expressStaticGzip("dist"));
 
 app.use(middleware);
 

@@ -2,7 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
-const compressWebpack = require("compression-webpack-plugin");
+const CompressWebpack = require("compression-webpack-plugin");
 const LoadablePlugin = require('@loadable/webpack-plugin');
 
 module.exports = () => ({
@@ -53,6 +53,9 @@ module.exports = () => ({
         new LoadablePlugin(),
         new HtmlWebpackPlugin({
             template: "./devPort/index.html",
+        }),
+        new CompressWebpack({
+            exclude: [/\.html$/i, /\.json$/i]
         })
     ]
 })

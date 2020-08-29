@@ -25,7 +25,6 @@ const middleware = (req, res) => {
     let staticContext = {};
 
     const reactMarkup = renderToString(chunkExtractor.collectChunks(
-
         <StaticRouter location={req.url} context={staticContext}>
             <StyleContext.Provider value={{ insertCss }}>
                 <App />
