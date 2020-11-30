@@ -15,6 +15,7 @@
     "prod": "npm run webpack -- --env.mode production",
     "dev": "npm run devServer -- --env.mode development",
     "server": "npm run cleanS && npm run webpack -- --config=./build-utils/webpack.server.js --env.mode production",
+    "buildS": "npm run webpack -- --config=./build-utils/webpack.server.js --env.mode production",
     "prod:typescript": "npm run prod -- --env.presets typescript",
     "prod:analyze": "npm run prod -- --env.presets analyze",
     "prod:compress": "npm run prod -- --env.presets compress",

@@ -4,7 +4,7 @@
 /node_modules
 node_modules/
 .cache/
-dist/
+#dist/
 coverage/
 .vscode/
 .env
@@ -18,7 +18,7 @@ src/
 ssr/
 package-lock.json
 helper/graphic.css
-
+versions/newOld/
 
 
 
