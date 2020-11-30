@@ -25,7 +25,7 @@ const AboutDisplay = () => {
           style={{
             textDecoration: "none",
             color: "seagreen",
-            fontSize: 40
+            fontSize: 60
           }}
         >
           Email Me!

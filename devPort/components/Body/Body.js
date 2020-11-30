@@ -4,7 +4,7 @@ import Heading from "./Heading";
 import CalThumb from "./CalThumb";
 import bodyS from "./Body.css";
 import useStyles from "isomorphic-style-loader/useStyles";
-const homeImg = require("../../../public/the-developer.jpg");
+const homeImg = require("../../../public/slate_t.jpg");
 const calImg = require("../../../public/cal1500C.png");
 
 const Body = (props) => {
