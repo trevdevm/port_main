@@ -55,7 +55,7 @@ module.exports = () => ({
     ],
   },
   output: {
-    path: "/home/dynacode/web/port_main/server",
+    path: "/home/trevdevm/code/webpack/cloner/port_main/server",
     filename: "[name].js",
   },
 });

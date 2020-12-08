@@ -6,9 +6,7 @@ import { limits, reducer } from "./Reducer";
 import axios from "axios";
 import loadable from "@loadable/component";
 
-const shitModule = () => {
-  import(/* webpackPrefetch: true */"../getShit");
-};
+import getShit from "../getShit";
 
 const Thanks = loadable(() => import(/* webpackPrefetch: true */"./Thanks"), {
   fallback: <Load />,
@@ -154,13 +152,6 @@ const Contact = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    let getShit;
-    shitModule().then((myMod) => {
-      getShit = myMod.default;
-    }).catch((err) => {
-      console.log(`Error processing request: ${err}`);
-    })
 
     axios
       .post(
