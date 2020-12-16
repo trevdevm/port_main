@@ -4,7 +4,7 @@
 /node_modules
 node_modules/
 .cache/
-#dist/
+dist
 coverage/
 .vscode/
 .env
@@ -19,8 +19,17 @@ ssr/
 package-lock.json
 helper/graphic.css
 versions/newOld/
-
-
+versions/
+static.txt
+helper
+helper/notes.js
+helper/reducerAsync.js
+helper/headContext.js
+devPort/useThunk.js
+devPort/Store.js
+server/
+public/*.png
+public/*.jpg
 
 # production
 /build
